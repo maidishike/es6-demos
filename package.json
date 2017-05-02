@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "babel js -d lib --watch"
+    "babel": "babel js -d lib --watch",
+    "webpack": "webpack --progress --display-modules --colors --display-reasons --watch"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,8 @@
     "babel-preset-env": "^1.4.0",
     "babel-preset-es2015": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
+    "glob": "^7.1.1",
+    "html-webpack-plugin": "^2.28.0",
     "transform-runtime": "0.0.0",
     "webpack": "^2.4.1"
   }
