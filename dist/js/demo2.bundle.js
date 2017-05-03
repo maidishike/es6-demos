@@ -74,8 +74,11 @@
 "use strict";
 
 
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
 // 数组的解构赋值
 
+console.log('数组的解构赋值');
 var a = 1,
     b = 2,
     c = 3;
@@ -113,6 +116,8 @@ console.log(d + ',' + e + ',' + f); // a, undefined, []
 
 // 不完全解构
 
+console.log('');
+console.log('不完全解构');
 var _ref4 = [1, 2, 3],
     ux = _ref4[0],
     uy = _ref4[1];
@@ -125,6 +130,72 @@ var ua = 1,
     ud = 4;
 
 console.log(ua + ',' + ub + ',' + ud); // 1 2 4
+
+// 对象的解构赋值
+console.log('');
+console.log('对象的解构赋值');
+var _o_foo$o_bar = { o_foo: 'aaa', o_bar: 'bbb' },
+    o_foo = _o_foo$o_bar.o_foo,
+    o_bar = _o_foo$o_bar.o_bar;
+
+console.log(o_foo, o_bar); // aaa bbb
+
+var _o_foo2$o_bar = { o_foo2: "aaa", o_bar2: "bbb" },
+    o_bar2 = _o_foo2$o_bar.o_bar2,
+    o_foo2 = _o_foo2$o_bar.o_foo2;
+
+console.log(o_foo, o_bar); // aaa bbb
+
+var _o_foo2$o_bar2 = { o_foo2: "aaa", o_bar2: "bbb" },
+    o_baz = _o_foo2$o_bar2.o_baz;
+
+console.log(o_baz); // undefined
+
+// 字符串的解构赋值
+console.log('');
+console.log('字符串的解构赋值');
+
+var _hello = 'hello',
+    _hello2 = _slicedToArray(_hello, 5),
+    sa = _hello2[0],
+    sb = _hello2[1],
+    sc = _hello2[2],
+    sd = _hello2[3],
+    se = _hello2[4];
+
+console.log(sa, sb, sc, sd, se); // h e l l o
+
+var _hello3 = 'hello',
+    len = _hello3.length;
+
+console.log(len); // 5
+
+// 数值和布尔值的解构赋值
+
+console.log('');
+console.log('数值和布尔值的解构赋值');
+var _ = 123,
+    num = _.toString;
+
+console.log(num === Number.prototype.toString); // true
+
+var _true = true,
+    str = _true.toString;
+
+console.log(str === Boolean.prototype.toString); // true
+
+// 函数参数的解构赋值
+console.log('');
+console.log('函数参数的解构赋值');
+function add(_ref6) {
+  var _ref7 = _slicedToArray(_ref6, 2),
+      x = _ref7[0],
+      y = _ref7[1];
+
+  return x + y;
+}
+
+console.log(add([1, 2])); // 3
 
 /***/ })
 /******/ ]);
