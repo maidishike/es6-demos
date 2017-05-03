@@ -24,3 +24,12 @@ console.log('变量place没有声明');
 // console.log(msg); // 报错 ReferenceError: place is not defined
 
 console.log(`Hello ${'World'}`); // Hello World
+
+let data = ['a', 'b', 'c', 'd', 'e'];
+let template = `
+  <ul>
+    <% for(var i = 0, len = data.length; i < len; i++) { %>
+      <li><%= data[i] %></li>
+    <% } %>
+  </ul>`;
+document.getElementById('app').innerHTML =  compile(template);

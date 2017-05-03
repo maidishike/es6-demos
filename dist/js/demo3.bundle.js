@@ -103,6 +103,10 @@ console.log('变量place没有声明');
 
 console.log('Hello ' + 'World'); // Hello World
 
+var data = ['a', 'b', 'c', 'd', 'e'];
+var template = '\n  <ul>\n    <% for(var i = 0, len = data.length; i < len; i++) { %>\n      <li><%= data[i] %></li>\n    <% } %>\n  </ul>';
+document.getElementById('app').innerHTML = compile(template);
+
 /***/ })
 
 /******/ });
