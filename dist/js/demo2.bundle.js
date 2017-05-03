@@ -63,91 +63,68 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
-/* 0 */
+/* 0 */,
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-/* let与const */
+// 数组的解构赋值
 
-function test1() {
-  if (true) {
-    var _a = 10;
-    var b = 1;
-  }
-  console.log(a); // ReferenceError: a is not defined.
-  console.log(b); // 1
-}
+var a = 1,
+    b = 2,
+    c = 3;
 
-// test1();
+console.log(a + ',' + b + ',' + c); // 1, 2, 3
 
-function test2() {
-  for (var _i = 0; _i < 10; _i++) {}
-  console.log(i); //ReferenceError: i is not defined
+var foo = 1,
+    bar = 2,
+    baz = 3;
 
-  for (var j = 0; j < 10; j++) {}
-  console.log(j); // 10
-}
+console.log(foo + ',' + bar + ',' + baz); // 1, 2, 3
 
-// test2();
+var _ref = ['foo', 'bar', 'baz'],
+    third = _ref[2];
 
-function test3() {
-  var a = [];
-  // 如果使用var - =0; 那么a[6]()输出 10
+console.log(third); // baz
 
-  var _loop = function _loop(_i2) {
-    a[_i2] = function () {
-      console.log(_i2);
-    };
-  };
+var _ref2 = [1, 2, 3],
+    x = _ref2[0],
+    y = _ref2[2];
 
-  for (var _i2 = 0; _i2 < 10; _i2++) {
-    _loop(_i2);
-  }
-  a[6](); // 6
-}
+console.log(x, y); // 1, 3
 
-// test3();
+var head = 1,
+    tail = [2, 3, 4];
 
-function test4() {
-  for (var _i3 = 0; _i3 < 3; _i3++) {
-    var _i4 = 'abc';
-    console.log(_i4);
-  }
-}
-test4();
+console.log(head, tail); // 1, [2, 3, 4]
 
-// ES6 的块级作用域
+var _ref3 = ['a'],
+    d = _ref3[0],
+    e = _ref3[1],
+    f = _ref3.slice(2);
 
-function test5() {
-  var n = 5;
-  if (true) {
-    var _n = 10;
-  }
-  console.log(n); // 5
-}
+console.log(d + ',' + e + ',' + f); // a, undefined, []
 
-test5();
+// 不完全解构
 
-function f() {
-  console.log('I am outside!');
-}
+var _ref4 = [1, 2, 3],
+    ux = _ref4[0],
+    uy = _ref4[1];
 
-(function () {
-  if (true) {
-    // 重复声明一次函数f
-    var _f = function _f() {
-      console.log('I am inside!');
-    };
-  }
+console.log(ux, uy); // 1 2
 
-  f();
-})();
+var ua = 1,
+    _ref5 = [2, 3],
+    ub = _ref5[0],
+    ud = 4;
+
+console.log(ua + ',' + ub + ',' + ud); // 1 2 4
 
 /***/ })
 /******/ ]);
